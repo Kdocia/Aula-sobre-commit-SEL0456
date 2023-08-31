@@ -1,20 +1,18 @@
-all: hello
+ALL = main
 
-hello: hello.o myfunction.o myfunction2.o
-	gcc -o hello hello.o myfunction.o myfunction2.o -lm
+all: $(ALL)
 
-myfunction.o: myfunction.c
-	gcc -c myfunction.c
+main: hello.o myfunction.o myfunction2.o
+	gcc -o h-o $@ $^ -lm
 
-myfunction2.o: myfunction2.c
-	gcc -c myfunction2.c
+%.o: %.c
+	gcc -c $<
 
 clean:
 	rm -f *.s*.o output erro
 
 distclean: clean 
-	rm -f hello
+	rm -f $(ALL)
 
-hello.o: hello.c
-	gcc -c hello.c
+
 
