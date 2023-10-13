@@ -1,2 +1,2 @@
-# Projeto-1-SEL0456
+# Aula sobre commit
 Pratica para aprendizagem e uso do git e github 
